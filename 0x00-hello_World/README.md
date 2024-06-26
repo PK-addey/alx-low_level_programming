@@ -1,0 +1,1 @@
+In this task, a script is written that runs a C file with variable name $CFILE through the preprocessor and saves the result in the file "c".
