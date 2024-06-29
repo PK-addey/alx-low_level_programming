@@ -3,7 +3,7 @@
 /**
 * main - Entry point, print alphabet in lowercase except 'q' and 'e'
 *
-* Return
+* Return: Always 0 (Success)
 */
 
 int main(void)
