@@ -18,7 +18,7 @@ dest++;
 src++;
 }
 
- *dest = '\0'; /*Append the null terminator*/
+*dest = '\0'; /*Append the null terminator*/
 
-return dest_orig;
+return (dest_orig);
 }
