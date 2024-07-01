@@ -6,7 +6,7 @@
 * @s: Pointer to the string
 * Return: Length of the string
 */
-int _strlen(char *s);
+int _strlen(char *s)
 {
 int length = 0;
 
@@ -15,14 +15,14 @@ while (s[length] != '\0')
 length++;
 }
 
-return length;
+ return (length);
 }
 
 /**
 * puts_half - Prints half of a string followed by a new line
 * @str: Pointer to the string
 */
-void puts_half(char *str);
+void puts_half(char *str)
 {
 int length = _strlen(str);
 int start_index;
