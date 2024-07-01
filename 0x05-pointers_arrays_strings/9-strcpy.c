@@ -1,24 +1,53 @@
 #include "main.h"
 
 /**
-* _strcpy - Copies the string pointed to by src, including the null byte,
-*           to the buffer pointed to by dest.
-* @dest: Pointer to the destination buffer
-* @src: Pointer to the source string
-* Return: Pointer to dest
+* _atoi - Converts a string to an integer
+* @s: Pointer to the string
+* Return: Converted integer
 */
-char *_strcpy(char *dest, char *src)
+int _atoi(char *s)
 {
-char *dest_orig = dest;
+int sign = 1; /* Initialize sign as positive*/
+int result = 0;
+int i = 0;
 
-while (*src != '\0')
+/* Skip whitespace characters*/
+while (s[i] == ' ')
 {
-*dest = *src;
-dest++;
-src++;
+i++;
 }
 
-*dest = '\0'; /*Append the null terminator*/
+/* Check for sign*/
+if (s[i] == '-' || s[i] == '+')
+{
+if (s[i] == '-')
+{
+sign = -1; /* Update sign if negative*/
+}
+i++; /* Move to the next character after sign*/
+}
 
-return (dest_orig);
+/* Process digits and convert to integer*/
+while (s[i] >= '0' && s[i] <= '9')
+{
+/*Check for overflow before updating result*/
+if (result > (INT_MAX / 10) || (result == INT_MAX / 10 && (s[i] - '0') > INT_MAX % 10))
+{
+/* Handle overflow*/
+if (sign == 1)
+{
+return (INT_MAX);
+}
+else
+{
+return (INT_MIN);
+}
+}
+
+/* Update result*/
+result = result * 10 + (s[i] - '0');
+i++;
+}
+
+return (sign * result);
 }
