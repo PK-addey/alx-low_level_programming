@@ -5,32 +5,46 @@
 * @s: Pointer to the string
 * Return: Converted integer
 */
-
 int _atoi(char *s)
 {
 int sign = 1;
-int num = 0;
+int result = 0;
+int i = 0;
 
-while (*s != '\0')
+while (s[i] == ' ')
 {
-if (*s == '-')
-{
-sign *= -1;
-}
-else if (*s == '+')
-{
-sign *= 1;
-}
-else if (*s >= '0' && *s <= '9')
-{
-num = num * 10 + (*s - '0');
-}
-else if (num > 0)
-{
-break;
-}
-s++;
+i++;
 }
 
-return (sign * num);
+if (s[i] == '-' || s[i] == '+')
+{
+if (s[i] == '-')
+{
+sign = -1;
+}
+i++;
+}
+
+
+while (s[i] >= '0' && s[i] <= '9')
+{
+
+if (result > (INT_MAX / 10) || (result == INT_MAX / 10 && (s[i] - '0') > INT_MAX % 10))
+{
+
+if (sign == 1)
+{
+return (INT_MAX);
+}
+else
+{
+return (INT_MIN);
+}
+}
+
+result = result * 10 + (s[i] - '0');
+i++;
+}
+
+return (sign * result);
 }
