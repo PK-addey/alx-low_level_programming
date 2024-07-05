@@ -9,8 +9,6 @@
 
 int main(void)
 {
-const char *quote = "and that piece of art is useful\" - Dora"
-"Korpar, 2015-10-19\n";
-fwrite(quote, strlen(quote), 1, stderr);
+write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
 return (1);
 }
