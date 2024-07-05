@@ -6,24 +6,16 @@
 * @src: The source string
 * @n: The number of bytes to use from src
 *
-* Return: A pointer to the resulting string dest
+* Return: A pointer to the resulting string dest.
 */
+
 char *_strncat(char *dest, char *src, int n)
 {
-int i, j;
+int index = 0, dest_len =0;
 
-/* Find the length of dest string */
-for (i = 0; dest[i] != '\0'; i++)
-;
-
-/* Concatenate src to dest using at most n bytes from src */
-for (j = 0; j < n && src[j] != '\0'; j++, i++)
-{
-dest[i] = src[j];
-}
-
-/* Null-terminate dest */
-dest[i] = '\0';
-
-return(dest);
+while (dest[index++])
+dest_len++;
+for (index = 0; src[index] && index < n; index++)
+dest[dest_len++] = src[index];
+return (dest);
 }
