@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
 * _strncpy - Copies n bytes of src to dest, including null bytes.
 * @dest: The destination buffer to copy to.
@@ -20,5 +21,5 @@ dest[index] = src[index];
 for (index = src_len; index < n; index++)
 dest[index] = '\0';
 
-return(dest);
+return (dest);
 }
