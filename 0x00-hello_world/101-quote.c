@@ -9,7 +9,8 @@
 
 int main(void)
 {
-const char *quote = "Exactly and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+const char *quote = "and that piece of art is useful\"
+- Dora Korpar, 2015-10-19\n";
 fwrite(quote, strlen(quote), 1, stderr);
-return 1;
+return (1);
 }
