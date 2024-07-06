@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
 * rot13 - encodes a string using rot13
 * @s: the string to encode
@@ -30,17 +31,8 @@ else
 current++;
 }
 }
-}
 *p = current;
 p++;
 }
 return (s);
-}
-
-int main(void)
-{
-char str[] = "Hello, World!";
-
-printf("%s\n", rot13(str));
-return (0);
 }
