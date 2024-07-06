@@ -34,5 +34,6 @@ current++;
 *p = current;
 p++;
 }
+}
 return (s);
 }
