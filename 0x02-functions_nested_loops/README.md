@@ -1,0 +1,1 @@
+This project involves practicing the implementation of functions and nested loops in the C programming language. The objective is to understand how to use functions and nested loops to handle complex tasks.
