@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/**
+* main - Prints numbers from 1 to 100 with specific substitutions.
+*
+* Return: Always returns (0).
+*/
+
 int main(void)
 {
 int i;
