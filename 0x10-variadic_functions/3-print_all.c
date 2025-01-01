@@ -19,7 +19,11 @@ va_start(args, format);
 
 while (fmt != NULL && *fmt != '\0')
 {
-if (first == 0)
+if (first)
+{
+first = 0;
+}
+if (!first)
 {
 printf(", ");
 }
@@ -39,14 +43,7 @@ case 's':
 {
 char *str = va_arg(args, char *);
 
-if (str == NULL)
-{
-printf("(nil)");
-}
-else
-{
-printf("%s", str);
-}
+printf("%s", str ? str : "(nil)");
 break;
 }
 default:
@@ -54,10 +51,6 @@ break;
 }
 
 fmt++;
-if (first == 1)
-{
-first = 0;
-}
 }
 
 printf("\n");
