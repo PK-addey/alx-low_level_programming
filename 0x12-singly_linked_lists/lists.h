@@ -4,16 +4,16 @@
 #include <stddef.h>
 
 /**
- * struct list_t - A linked list node.
- * @str: The string stored in the node.
- * @len: The length of the string.
- * @next: A pointer to the next node in the list.
- */
+* struct list_t - A linked list node.
+* @str: The string stored in the node.
+* @len: The length of the string.
+* @next: A pointer to the next node in the list.
+*/
 typedef struct list_t
 {
-    char *str;
-    unsigned int len;
-    struct list_t *next;
+char *str;
+unsigned int len;
+struct list_t *next;
 } list_t;
 
 void free_list(list_t *head);
